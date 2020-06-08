@@ -14,8 +14,6 @@ spec:
         app: myapp
     spec:
       containers:
-      imagePullSecrets:
-      - name: regcreds
       - name: myapp
         #image: zlabjp/myapp:v2
         image: harbor.run.haas-208.pez.pivotal.io/arulimages/myapp:v2
@@ -34,3 +32,5 @@ spec:
           preStop:
             exec:
               command: ["sh", "-c", "sleep 1; nginx -s quit; sleep 3"]
+      imagePullSecrets:
+      - name: regcreds         
