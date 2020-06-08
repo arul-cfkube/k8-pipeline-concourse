@@ -16,7 +16,7 @@ spec:
       containers:
       - name: myapp
         #image: zlabjp/myapp:v2
-        image: harbor.run.haas-208.pez.pivotal.io/arulimages/myapp:v1
+        image: harbor.run.haas-208.pez.pivotal.io/arulimages/myapp:v2
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
