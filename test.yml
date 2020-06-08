@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: harbor-test
+  name: harbor-test
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: harbor-test
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: harbor-test
+    spec:
+      containers:
+      - image: harbor.run.haas-208.pez.pivotal.io/arulimages/myapp:v1
+        name: myapp
+      imagePullSecrets:
+      - name: regcreds
