@@ -3,13 +3,13 @@ resource_types:
   type: docker-image
   source:
     repository: zlabjp/kubernetes-resource
-    tag: "1.8"
+    tag: "1.16"
 
 resources:
 - name: repo
   type: git
   source:
-    uri: git://github.com/arulvannala/k8-pipeline-concourse.git
+    uri: git://github.com/arulvannala/concourse-meetup-tokyo-7-demo.git
     branch: master
     paths: [deploy/*]
 
@@ -55,7 +55,7 @@ jobs:
         - |
           apt-get update -yqq
           apt-get install curl -yqq
-          curl --fail -H "Host: stage-myapp.example.local" 182.22.30.96
+        #  curl --fail -H "Host: stage-myapp.example.local" 182.22.30.96
 
 - name: prod-deploy
   serial: true
