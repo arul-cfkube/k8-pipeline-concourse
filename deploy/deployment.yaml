@@ -16,7 +16,7 @@ spec:
       containers:
       - name: test-pipeline-app
         #image: zlabjp/test-pipeline-app:v2
-        image: harbor.run.haas-208.pez.pivotal.io/arulimages/test-pipeline-app:v2
+        image: harbor.run.haas-208.pez.pivotal.io/arulimages/cnb-springboot
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
