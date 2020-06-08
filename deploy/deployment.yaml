@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: myapp
-  name: myapp
+    app: test-pipeline-app
+  name: test-pipeline-app
 spec:
   selector:
     matchLabels:
-      app: myapp
+      app: test-pipeline-app
   template:
     metadata:
       labels:
-        app: myapp
+        app: test-pipeline-app
     spec:
       containers:
-      - name: myapp
-        #image: zlabjp/myapp:v2
-        image: harbor.run.haas-208.pez.pivotal.io/arulimages/myapp:v2
+      - name: test-pipeline-app
+        #image: zlabjp/test-pipeline-app:v2
+        image: harbor.run.haas-208.pez.pivotal.io/arulimages/test-pipeline-app:v2
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -33,4 +33,4 @@ spec:
             exec:
               command: ["sh", "-c", "sleep 1; nginx -s quit; sleep 3"]
       imagePullSecrets:
-      - name: regcreds         
+      - name: regcreds
